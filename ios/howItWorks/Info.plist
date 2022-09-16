@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>MyApp</string>
+	<string>howItWorks</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -51,11 +51,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	 <key>NSAllowsArbitraryLoads</key>
-  <true/>
-    <key>NSAllowsArbitraryLoadsInWebContent</key>
-  <true/>
-    <key>NSAllowsLocalNetworking</key>
-  <true/>
 </dict>
 </plist>
