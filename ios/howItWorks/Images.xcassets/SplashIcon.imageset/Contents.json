@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo-rn.jpeg",
+      "filename" : "logo300.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "logo600.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "logo900.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
