@@ -1,8 +1,15 @@
 import React from 'react';
 import styles from './styles';
-import {SafeAreaView, Text, TouchableOpacity, View} from 'react-native';
-import Counter from '../../components/Counter';
+import {
+  Image,
+  ImageSourcePropType,
+  SafeAreaView,
+  Text,
+  View,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import Button from '../../components/Button';
+import logoImage from '../../../assets/ios/logo.jpeg';
 
 const Home = () => {
   const navigation = useNavigation();
@@ -11,13 +18,30 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Counter description="counter: " />
-        <Text style={styles.headline}>random content</Text>
+      <View style={styles.row}>
+        <View style={styles.wrapper}>
+          <Image
+            style={styles.imageLogo}
+            source={logoImage as ImageSourcePropType}
+          />
+          <Text style={styles.headline}>HowItWorks</Text>
+          <Text style={styles.subHeadline}>Your development assistant</Text>
+        </View>
 
-        <TouchableOpacity onPress={handleRedirect}>
-          <Text>redirect</Text>
-        </TouchableOpacity>
+        <View style={styles.wrapperAction}>
+          <Button
+            onPress={handleRedirect}
+            customButtonStyle={styles.button}
+            custonButtonContentStyle={styles.buttonContent}
+            children="LogIn"
+          />
+          <Button
+            onPress={handleRedirect}
+            customButtonStyle={styles.button}
+            custonButtonContentStyle={styles.buttonContent}
+            children="SigUp"
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
