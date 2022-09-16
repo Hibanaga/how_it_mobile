@@ -2,7 +2,8 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './home';
-import AboutScreen from './About';
+import SignUpScreen from './SignUp';
+import LogInScreen from './Login';
 import {RootStackParamList} from '../types/Navigation.types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -17,8 +18,14 @@ const Router = () => {
           options={{headerShown: false}}
         />
         <Stack.Screen
-          name="About"
-          component={AboutScreen}
+          name="LogIn"
+          component={LogInScreen}
+          options={{headerShown: false}}
+        />
+
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpScreen}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

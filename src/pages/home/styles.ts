@@ -4,26 +4,29 @@ import {themes} from '../../styles/theme';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    width: '100%',
     backgroundColor: themes.colors.baseBlack,
   },
+  rowWrapper: {
+    flexGrow: 1,
+  },
   row: {
-    height: '97.5%',
-    width: '90%',
+    flex: 1,
     justifyContent: 'space-between',
   },
   imageLogo: {
     width: 220,
     height: 220,
     marginHorizontal: 'auto',
-    marginTop: 64,
+    marginTop: 36,
   },
   wrapper: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  wrapperAction: {},
+  wrapperAction: {
+    marginBottom: 36,
+  },
   headline: {
     textAlign: 'center',
     fontSize: themes.sizes.tertiary,
