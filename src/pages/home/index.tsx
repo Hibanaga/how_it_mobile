@@ -19,9 +19,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView
-        // style={styles.rowWrapper}
-        contentContainerStyle={styles.rowWrapper}>
+      <ScrollView contentContainerStyle={styles.rowWrapper}>
         <View style={styles.row}>
           <View style={styles.wrapper}>
             <Image
