@@ -3,6 +3,7 @@ import {
   KeyboardAvoidingView,
   SafeAreaView,
   ScrollView,
+  Text,
   TextInput,
   View,
 } from 'react-native';
@@ -12,6 +13,7 @@ import {themes} from '../../styles/theme';
 import Button from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
 import {useFormik} from 'formik';
+import PasswordInput from '../../components/modules/PasswordInput';
 
 const LogIn = () => {
   const navigation = useNavigation();
@@ -20,13 +22,14 @@ const LogIn = () => {
     onSubmit: () => {},
   });
 
-  const handleRedirect = () => navigation.navigate('Home');
+  const handleRedirectHome = () => navigation.navigate('Home');
+  const handleRedirectSignUp = () => navigation.navigate('SignUp');
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.row}>
         <Button
-          onPress={handleRedirect}
+          onPress={handleRedirectHome}
           customButtonStyle={styles.navigationButton}>
           <Icon
             name="md-arrow-back"
@@ -47,16 +50,11 @@ const LogIn = () => {
             autoCapitalize="none"
             style={[styles.input]}
           />
-          <TextInput
-            placeholderTextColor={themes.colors.transparent.baseText}
+          <PasswordInput
+            name="password"
             placeholder="Password"
-            onChangeText={handleChange('password')}
-            onBlur={handleBlur('password')}
             value={values.password}
-            autoCorrect={true}
-            keyboardType="email-address"
-            autoCapitalize="none"
-            style={[styles.input]}
+            handleChange={() => handleChange('password')}
           />
 
           <Button
@@ -65,6 +63,17 @@ const LogIn = () => {
             custonButtonContentStyle={styles.buttonContent}>
             log In
           </Button>
+
+          <View style={styles.bottomNavigationWrapper}>
+            <Text style={styles.bottonNavigationContent}>
+              If there is no account yet?{' '}
+              <Text
+                style={styles.bottomNavigationLink}
+                onPress={handleRedirectSignUp}>
+                Register
+              </Text>
+            </Text>
+          </View>
         </KeyboardAvoidingView>
       </ScrollView>
     </SafeAreaView>

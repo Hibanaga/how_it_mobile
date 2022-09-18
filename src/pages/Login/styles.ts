@@ -48,10 +48,35 @@ export default StyleSheet.create({
     paddingBottom: 16,
     backgroundColor: themes.colors.howLighther,
   },
+  passwordWrapper: {
+    position: 'relative',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'red',
+  },
+  showPass: {
+    position: 'absolute',
+    right: '10%',
+    top: '48.5%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   buttonContent: {
     alignItems: 'center',
     flex: 1,
     fontSize: themes.sizes.tertiary,
     color: themes.colors.transparent.baseText,
+  },
+  bottomNavigationWrapper: {
+    marginTop: 12,
+  },
+  bottonNavigationContent: {
+    color: themes.colors.baseWhite,
+    fontSize: themes.sizes.tertiaryMiddle,
+  },
+  bottomNavigationLink: {
+    color: themes.colors.contentGrey,
   },
 });
