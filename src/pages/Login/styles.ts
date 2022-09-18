@@ -54,7 +54,6 @@ export default StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'red',
   },
   showPass: {
     position: 'absolute',

@@ -15,7 +15,8 @@ import logoImage from '../../../assets/ios/logo.jpeg';
 const Home = () => {
   const navigation = useNavigation();
 
-  const handleRedirect = () => navigation.navigate('LogIn');
+  const handleRedirectLogIn = () => navigation.navigate('LogIn');
+  const handleRedirectSignUp = () => navigation.navigate('SignUp');
 
   return (
     <SafeAreaView style={styles.container}>
@@ -32,13 +33,13 @@ const Home = () => {
 
           <View style={styles.wrapperAction}>
             <Button
-              onPress={handleRedirect}
+              onPress={handleRedirectLogIn}
               customButtonStyle={styles.button}
               custonButtonContentStyle={styles.buttonContent}
               children="LogIn"
             />
             <Button
-              onPress={handleRedirect}
+              onPress={handleRedirectSignUp}
               customButtonStyle={styles.button}
               custonButtonContentStyle={styles.buttonContent}
               children="SigUp"

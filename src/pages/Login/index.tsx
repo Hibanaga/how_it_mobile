@@ -8,12 +8,12 @@ import {
   View,
 } from 'react-native';
 import styles from './styles';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {themes} from '../../styles/theme';
 import Button from '../../components/Button';
 import {useNavigation} from '@react-navigation/native';
 import {useFormik} from 'formik';
 import PasswordInput from '../../components/modules/PasswordInput';
+import BackButton from '../../components/modules/BackButtonAuth';
 
 const LogIn = () => {
   const navigation = useNavigation();
@@ -22,21 +22,13 @@ const LogIn = () => {
     onSubmit: () => {},
   });
 
-  const handleRedirectHome = () => navigation.navigate('Home');
+  const handleRedirectBack = () => navigation.goBack();
   const handleRedirectSignUp = () => navigation.navigate('SignUp');
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.row}>
-        <Button
-          onPress={handleRedirectHome}
-          customButtonStyle={styles.navigationButton}>
-          <Icon
-            name="md-arrow-back"
-            size={32}
-            color={themes.colors.baseWhite}
-          />
-        </Button>
+        <BackButton onPress={handleRedirectBack} />
 
         <KeyboardAvoidingView behavior="padding" style={styles.wrapper}>
           <TextInput
@@ -60,9 +52,9 @@ const LogIn = () => {
           <Button
             onPress={handleSubmit}
             customButtonStyle={styles.button}
-            custonButtonContentStyle={styles.buttonContent}>
-            log In
-          </Button>
+            custonButtonContentStyle={styles.buttonContent}
+            children="log In"
+          />
 
           <View style={styles.bottomNavigationWrapper}>
             <Text style={styles.bottonNavigationContent}>
